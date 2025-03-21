@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jatin Saini - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            background-color: #f0f2f5;
+            color: #343a40;
+            line-height: 1.6;
+            background-image: linear-gradient(135deg, #f0f2f5 0%, #e9ecef 100%);
+        }
+        .container {
+            max-width: 850px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+            border-bottom: 2px solid #4361ee;
+            padding-bottom: 28px;
+            position: relative;
+            background: linear-gradient(to right, rgba(67, 97, 238, 0.03), rgba(67, 97, 238, 0.08), rgba(67, 97, 238, 0.03));
+            border-radius: 8px 8px 0 0;
+            padding-top: 20px;
+            margin: -40px -40px 35px -40px;
+        }
+        .header:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 6px;
+            background: linear-gradient(to right, #4361ee, #6c8aee);
+            border-radius: 3px;
+        }
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            color: #212529;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+            background: linear-gradient(135deg, #212529 0%, #495057 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header p {
+            font-size: 19px;
+            color: #4361ee;
+            font-weight: 500;
+            letter-spacing: 0.6px;
+            margin-bottom: 5px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 10px 25px;
+        }
+        .contact-info p {
+            margin: 0;
+            font-size: 16px;
+            color: #495057;
+            transition: all 0.3s ease;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .contact-info p:hover {
+            color: #4361ee;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        .section {
+            margin-bottom: 35px;
+            padding: 0 5px;
+        }
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            color: #212529;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+            margin-bottom: 22px;
+            font-weight: 600;
+            position: relative;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, #4361ee, #6c8aee, rgba(108, 138, 238, 0.3));
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        .section:hover .section-title:after {
+            width: 100%;
+        }
+        .education-item, .experience-item {
+            margin-bottom: 22px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            border-left: 3px solid transparent;
+        }
+        .education-item:hover, .experience-item:hover {
+            background-color: rgba(67, 97, 238, 0.03);
+            transform: translateX(5px);
+            border-left: 3px solid #4361ee;
+        }
+        .education-item h3, .experience-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #4361ee;
+            margin-bottom: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .education-item:hover h3, .experience-item:hover h3 {
+            transform: translateX(3px);
+        }
+        .education-item p, .experience-item p {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #495057;
+            transition: all 0.3s ease;
+        }
+        .experience-item ul {
+            list-style-type: none;
+            padding-left: 5px;
+            margin-top: 12px;
+        }
+        .experience-item ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: #495057;
+            transition: all 0.3s ease;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+        .experience-item ul li:hover {
+            transform: translateX(3px);
+            color: #212529;
+        }
+        .experience-item ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #4361ee;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .experience-item ul li:hover:before {
+            transform: translateX(3px);
+            color: #3651d4;
+        }
+        .experience-item ul li strong {
+            color: #3651d4;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .skill-category {
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 4px solid #4361ee;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .skill-category:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.08) 0%, rgba(255, 255, 255, 0) 60%);
+            z-index: 0;
+        }
+        .skill-category:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+            border-left-width: 6px;
+        }
+        .skill-category h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            color: #4361ee;
+            margin-bottom: 12px;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .skill-category h3:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #4361ee;
+            transition: width 0.3s ease;
+        }
+        .skill-category:hover h3:after {
+            width: 100%;
+        }
+        .skill-category ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        .skill-category ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #495057;
+        }
+        .skill-category ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4361ee;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .achievements ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        .achievements ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: #495057;
+            transition: all 0.3s ease;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        .achievements ul li:hover {
+            transform: translateX(5px);
+            color: #212529;
+        }
+        .achievements ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #38b000;
+            font-weight: bold;
+            font-size: 16px;
+            background-color: rgba(56, 176, 0, 0.1);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .achievements ul li:hover:before {
+            background-color: rgba(56, 176, 0, 0.2);
+            transform: scale(1.1);
+        }
+        @media print {
+            body {
+                background-color: white;
+                background-image: none;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 20px;
+                max-width: 100%;
+                border-radius: 0;
+                transform: none !important;
+                border: none;
+            }
+            .header {
+                background: none;
+                margin: 0 0 25px 0;
+            }
+            .skill-category {
+                background-color: white;
+                box-shadow: none;
+                transform: none !important;
+            }
+            .contact-info p {
+                background: none;
+                box-shadow: none;
+            }
+            .education-item:hover, .experience-item:hover, .skill-category:hover, .contact-info p:hover {
+                transform: none !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+                margin: 15px;
+                max-width: calc(100% - 30px);
+            }
+            .header {
+                margin: -30px -30px 30px -30px;
+            }
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 36px;
+            }
+            .section-title {
+                font-size: 20px;
+            }
+            .contact-info {
+                gap: 8px 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+                max-width: calc(100% - 20px);
+            }
+            .header {
+                margin: -20px -20px 25px -20px;
+                padding-bottom: 20px;
+            }
+            .header h1 {
+                font-size: 30px;
+            }
+            .header p {
+                font-size: 16px;
+            }
+            .contact-info p {
+                padding: 4px 10px;
+                font-size: 14px;
+            }
+            .section-title {
+                font-size: 18px;
+            }
+            .education-item h3, .experience-item h3, .skill-category h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Jatin Saini</h1>
+            <p>Web Developer | Digital Marketer | Graphic Designer</p>
+            <div class="contact-info">
+                <p>📱 9650113024</p>
+                <p>📧 jatinsainijio73@gmail.com</p>
+            </div>
+            <div class="contact-info">
+                <p>🏠 4800, Gali Mitra Wali, Roshnara Road, Delhi 110007</p>
+                <p>🎂 14/07/2003</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>Experienced Web Developer, Digital Marketer, and Graphic Designer with over 4 years of expertise in creating dynamic websites, executing SEO strategies, and delivering high-quality graphic designs. Proven ability to manage end-to-end projects efficiently, ensuring client satisfaction and achieving measurable results.</p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <h3>Diploma in Printing Technology (Ongoing)</h3>
+                <p>DSEU Pusa Campus</p>
+            </div>
+            <div class="education-item">
+                <h3>ITI in DTPO (Graphic Design)</h3>
+                <p>Pusa ITI (3rd Rank)</p>
+            </div>
+            <div class="education-item">
+                <h3>12th Grade (Science Stream)</h3>
+                <p>NIOS</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-item">
+                <h3>Shabdshila (Current)</h3>
+                <p>Web design, SEO, digital marketing, and graphic design for a leading news platform.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Website Projects</h3>
+                <ul>
+                    <li><strong>Shabdshila</strong> - Fastest news provider with a focus on user-friendly design and SEO optimization.</li>
+                    <li><strong>AGE Foundations</strong> - NGO website highlighting charity initiatives and services.</li>
+                    <li><strong>RS International</strong> - Business site with global service details and contact options.</li>
+                    <li><strong>The Bee Box Group</strong> - Corporate website featuring product offerings and branding.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>WordPress Development - Expert in theme customization, plugin integration, and performance optimization for WordPress sites</li>
+                        <li>AI-Based Website Development - Creating intelligent websites with chatbots, recommendation systems, and automated content generation</li>
+                        <li>Custom Coding (HTML, CSS, JS, PHP) - Proficient in writing clean, efficient code for responsive and interactive websites</li>
+                        <li>E-commerce Development (WooCommerce, Shopify) - Building secure online stores with payment gateways, inventory management, and user-friendly checkout processes</li>
+                        <li>API Integration - Seamlessly connecting websites with third-party services and applications</li>
+                        <li>Maintenance & Troubleshooting - Identifying and resolving website issues, security vulnerabilities, and performance bottlenecks</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Digital Marketing</h3>
+                    <ul>
+                        <li>SEO - Implementing on-page and off-page optimization strategies to improve search rankings and organic traffic</li>
+                        <li>SEM - Managing paid search campaigns with keyword research, ad copywriting, and budget optimization</li>
+                        <li>Social Media Marketing - Creating engaging content strategies and managing campaigns across multiple platforms</li>
+                        <li>Analytics & Tracking (Google Analytics, Tag Manager) - Setting up comprehensive tracking systems and generating actionable insights from data</li>
+                        <li>Content Marketing - Developing strategic content plans that drive engagement and conversions</li>
+                        <li>Retargeting - Implementing sophisticated audience segmentation and retargeting campaigns to maximize ROI</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Graphic Design</h3>
+                    <ul>
+                        <li>Adobe Photoshop - Advanced photo editing, manipulation, and composite creation for print and digital media</li>
+                        <li>CorelDRAW - Expert in vector illustration, layout design, and typography for professional print materials</li>
+                        <li>Illustrator - Creating scalable vector graphics, logos, and brand identity elements</li>
+                        <li>Canva - Rapid design production for social media, presentations, and marketing materials</li>
+                        <li>Print & Digital Media Design - Designing cohesive visual assets across multiple platforms with attention to color theory and composition</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>IT and Cloud Computing</h3>
+                    <ul>
+                        <li>Server Management (AWS, Google Cloud)</li>
+                        <li>DNS & Domain Management</li>
+                        <li>Backup & Recovery</li>
+                        <li>Website Security</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Project Management</h3>
+                    <ul>
+                        <li>End-to-End Project Management</li>
+                        <li>Budgeting & Resource Allocation</li>
+                        <li>Testing & Optimization (A/B Testing, CRO)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Additional Skills</h3>
+                    <ul>
+                        <li>Canva Expertise</li>
+                        <li>Affiliate Marketing</li>
+                        <li>AI Tools</li>
+                        <li>IT Problem-Solving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section achievements">
+            <h2 class="section-title">Achievements</h2>
+            <ul>
+                <li>Secured 3rd Rank in ITI DTPO (Graphic Design) at Pusa ITI</li>
+                <li>Developed and managed multiple high-traffic websites with measurable results in SEO and user engagement</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
